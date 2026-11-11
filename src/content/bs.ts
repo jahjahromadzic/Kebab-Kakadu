@@ -1,40 +1,11 @@
 /**
- * TEKSTOVI NA STRANICI (bosanski).
+ * TEKSTOVI NA STRANICI: bosanski (izvorni jezik).
  * Samo provjerene činjenice (RESEARCH.md). Placeholderi su u uglastim zagradama.
+ * Prijevodi: en.ts, ar.ts (isti ključevi, vidi types.ts).
  */
+import type { Content } from './types.ts'
 
-const HERO_SUB =
-  'Kebab, pileći file, tortilje i burgeri. Mehmedalije Maka Dizdara 6a, preko puta Doma Armije. Narudžbe telefonom, dostava na adresu 1 KM.'
-
-/**
- * Varijante hero naslova, isključivo od provjerenih činjenica
- * (naziv, 2010., döner kebab s logotipa, lokacija preko puta Doma Armije).
- * Odabrana (klijent, 11.11.2026.): „Kebab Kakadu, od 2010."
- * Klijent bira konačnu, pa se mijenja samo HERO_VARIANT.
- * Svaki red naslova je zaseban element niza (raspored i animacija).
- */
-export const HERO_VARIANTS = [
-  {
-    id: 'kakadu-2010',
-    lines: ['Kebab Kakadu,', 'od 2010.'],
-    sub: HERO_SUB,
-  },
-  {
-    id: 'doner-kebab-bihac',
-    lines: ['Döner kebab', 'u Bihaću', 'od 2010.'],
-    sub: HERO_SUB,
-  },
-  {
-    id: 'preko-puta-doma-armije',
-    lines: ['Kebab', 'preko puta', 'Doma Armije.'],
-    sub: 'Kebab, pileći file, tortilje i burgeri. Mehmedalije Maka Dizdara 6a. Narudžbe telefonom, dostava na adresu 1 KM.',
-  },
-] as const
-
-/** ← Odabrana varijanta (0, 1 ili 2). */
-export const HERO_VARIANT = 0
-
-export const CONTENT = {
+export const bs: Content = {
   meta: {
     title: 'Kebab Kakadu Bihać | Döner kebab od 2010. · Dostava 1 KM',
     description:
@@ -42,6 +13,8 @@ export const CONTENT = {
     ogImageAlt: 'Logo Kakadu Döner Kebab na fotografiji iz radnje',
   },
   skipLink: 'Preskoči na sadržaj',
+  langSwitchLabel: 'Jezik',
+  mainNavLabel: 'Glavna navigacija',
   nav: [
     { href: '#meni', label: 'Meni' },
     { href: '#o-nama', label: 'O nama' },
@@ -51,18 +24,37 @@ export const CONTENT = {
   ],
   cta: {
     callOrder: 'Pozovi i naruči',
-    /** Podnaslov uz dugme „Pozovi i naruči" */
     deliveryLine: 'Dostava na adresu — 1 KM',
+    or: 'ili',
   },
   hero: {
+    // Odabrao klijent 11.11.2026.
+    lines: ['Kebab Kakadu,', 'od 2010.'],
+    sub: 'Kebab, pileći file, tortilje i burgeri. Mehmedalije Maka Dizdara 6a, preko puta Doma Armije. Narudžbe telefonom, dostava na adresu 1 KM.',
     menuLink: 'Meni i cijene',
+    imageAlt: {
+      kebabTanjir: 'Isječeno döner meso s bijelim sosom i ljutom paprikom u lepinji, na tanjiru, u papiru s natpisom Kakadu',
+      fasadaNoc: 'Fasada Kebab Kakadua noću: svijetleći natpis s dva plamena, okrugla viseća tabla i osvijetljena sala iza izloga',
+      enterijerSala: 'Sala Kebab Kakadua: hrastovi stolovi, stolice s ukrštenim naslonom, zeleni zidovi i staklena vrata prema ulici',
+    },
   },
   menu: {
     title: 'Meni',
     note: 'Sve cijene su u KM.',
     deliveryNote: 'Dostava samo u toku radnog vremena.',
-    descriptionPlaceholder: '[OPIS JELA]',
     categoriesLabel: 'Kategorije menija',
+    descriptionPlaceholder: '[OPIS JELA]',
+    // Bosanski nazivi dolaze iz src/data/menu.ts (izvor: jelovnik radnje).
+    categories: {},
+    items: {},
+    dackiTitle: 'Đački obrok',
+    studentSubsidy: 'Studenti Univerziteta u Bihaću mogu iskoristiti subvenciju UNBI Meal.',
+    photoAlt: {
+      kebabLepinja: 'Kebab u pečenoj lepinji sa zelenom salatom i bijelim sosom, umotan u papir',
+      kebabTanjir: 'Isječeno döner meso s bijelim sosom i ljutom paprikom na tanjiru, u papiru s natpisom Kakadu',
+      kebabTortilja: 'Kebab u tortilji s paradajzom i salatom, umotan u foliju',
+      kebabSalate: 'Kebab s puno mesa pored posuda sa svježim kupusom, zelenom salatom i sosom',
+    },
   },
   about: {
     title: 'O nama',
@@ -71,7 +63,6 @@ export const CONTENT = {
      * ⚠ ČEKA ODOBRENJE VLASNIKA.
      * Napisano isključivo od provjerenih činjenica (RESEARCH.md): od 2010., adresa i
      * „preko puta Doma Armije (nekadašnji 077)" s jelovnika, narudžbe telefonom, dostava 1 KM.
-     * Kad vlasnik pošalje svoju priču, zamijeniti ovaj tekst (placeholder: [PRIČA]).
      */
     story: [
       'Kebab Kakadu radi u Bihaću od 2010. godine.',
@@ -95,6 +86,14 @@ export const CONTENT = {
     prev: 'Prethodna fotografija',
     next: 'Sljedeća fotografija',
     open: 'Otvori fotografiju',
+    alts: {
+      fasadaSumrak: 'Svijetleći natpis Kebab Kakadu s dva plamena iznad ulaza u sumrak',
+      kebabTanjir: 'Döner meso s bijelim sosom i ljutom paprikom na tanjiru, u papiru s natpisom Kakadu',
+      kebabSalate: 'Kebab s puno mesa pored posuda sa svježim kupusom, zelenom salatom i sosom',
+      kebabLepinja: 'Kebab u pečenoj lepinji sa zelenom salatom i bijelim sosom, umotan u papir',
+      kebabTortilja: 'Kebab u tortilji s paradajzom i salatom, umotan u foliju',
+    },
+    creditPlaceholder: '[FOTO: zamijeniti vlastitim fotografijama]',
   },
   location: {
     title: 'Lokacija i radno vrijeme',
@@ -102,23 +101,19 @@ export const CONTENT = {
     hoursTitle: 'Radno vrijeme',
     today: 'danas',
     closed: 'zatvoreno',
+    and: 'i',
     directions: 'Otvori u Google Maps',
-    mapLoad: 'Prikaži mapu',
-    mapNote: 'Mapa se učitava s Google Maps servisa nakon klika.',
     mapTitle: 'Google mapa: Kebab Kakadu, Mehmedalije Maka Dizdara 6a, Bihać',
+    days: ['Ponedjeljak', 'Utorak', 'Srijeda', 'Četvrtak', 'Petak', 'Subota', 'Nedjelja'],
+    scheduleLabels: { zimsko: 'Zimsko radno vrijeme', ljetno: 'Ljetno radno vrijeme' },
   },
   footer: {
     title: 'Kontakt',
     phoneLabel: 'Narudžbe i dostava',
-    otherNumber: 'ili',
     social: 'Društvene mreže',
     facebook: 'Facebook',
-    placeholders: {
-      instagram: '[INSTAGRAM]',
-      viber: '[VIBER]',
-      email: '[EMAIL]',
-    },
+    placeholders: { instagram: '[INSTAGRAM]', viber: '[VIBER]', email: '[EMAIL]' },
     logoNote: 'Logo: privremena SVG rekonstrukcija.',
     madeFor: 'Demo stranica',
   },
-} as const
+}

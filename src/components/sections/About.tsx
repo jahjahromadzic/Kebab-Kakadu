@@ -1,6 +1,6 @@
-import { CONTENT } from '../../content/bs'
-import { ABOUT_SIZES } from '../../lib/imageSizes'
 import { SHOW_PLACEHOLDERS } from '../../config/site'
+import { useI18n } from '../../i18n/context'
+import { ABOUT_SIZES } from '../../lib/imageSizes'
 import { Handwriting } from '../brand/Handwriting'
 import { Picture } from '../ui/Picture'
 
@@ -9,13 +9,14 @@ import { Picture } from '../ui/Picture'
  * preko nje krupna „2010" i rukopisni natpis s fasade koji se ispisuje.
  */
 export function About() {
-  const { about } = CONTENT
+  const { t } = useI18n()
+  const { about } = t
   return (
-    <section id="o-nama" aria-labelledby="o-nama-title" className="plaster grain relative overflow-hidden py-24 lg:py-36">
+    <section id="o-nama" aria-labelledby="o-nama-title" className="plaster grain relative overflow-hidden py-20 lg:py-28">
       <div className="mx-auto grid max-w-[90rem] gap-12 px-4 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-10">
         {/* Fotografija + 2010 */}
         <div className="relative lg:col-span-6 lg:col-start-7 lg:row-start-1">
-          <div className="relative ml-auto w-[88%] overflow-hidden rounded-sm shadow-[0_40px_80px_rgb(0_0_0/0.45)] lg:w-full" data-reveal-clip>
+          <div className="relative ms-auto w-[88%] overflow-hidden rounded-sm shadow-[0_40px_80px_rgb(0_0_0/0.45)] lg:w-full" data-reveal-clip>
             <div className="aspect-[3/4] overflow-hidden">
               <Picture
                 image="enterijerSala"
@@ -29,7 +30,7 @@ export function About() {
           <p
             aria-hidden="true"
             data-parallax-text
-            className="display pointer-events-none absolute -bottom-6 -left-2 text-[clamp(7rem,32vw,12rem)] text-transparent [-webkit-text-stroke:2px_var(--color-kadulja-svijetla)] lg:-bottom-10 lg:-left-[38%] lg:text-[clamp(10rem,17vw,17rem)]"
+            className="display pointer-events-none absolute -bottom-6 -start-2 text-[clamp(7rem,32vw,12rem)] text-transparent [-webkit-text-stroke:2px_var(--color-kadulja-svijetla)] lg:-bottom-10 lg:-start-[38%] lg:text-[clamp(10rem,17vw,17rem)]"
           >
             {about.bigNumber}
           </p>
@@ -47,7 +48,7 @@ export function About() {
           />
 
           <div className="mt-8 max-w-[56ch] space-y-5 text-lg leading-relaxed text-krem/90">
-            {/* ⚠ Tekst „story" čeka odobrenje vlasnika (src/content/bs.ts) */}
+            {/* ⚠ Tekst „story" čeka odobrenje vlasnika (src/content/*.ts) */}
             <p data-reveal className="text-xl text-krem">
               {about.story.join(' ')}
             </p>
@@ -65,7 +66,9 @@ export function About() {
             {about.facts.map((f) => (
               <div key={f.k} className="contents">
                 <dt className="eyebrow self-center text-kadulja-svijetla">{f.k}</dt>
-                <dd className="display text-3xl text-krem">{f.v}</dd>
+                <dd className="display text-3xl text-krem">
+                  <bdi>{f.v}</bdi>
+                </dd>
               </div>
             ))}
           </dl>

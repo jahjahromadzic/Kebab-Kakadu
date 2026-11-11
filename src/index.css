@@ -1,6 +1,13 @@
 /* Fontovi: self-hosted (@fontsource), samo latin + latin-ext preko unicode-range, font-display: swap */
 @import '@fontsource-variable/big-shoulders-display';
 @import '@fontsource-variable/instrument-sans';
+/*
+ * Arapsko pismo (stranica /ar/): Noto Kufi Arabic u tri statičke težine (~45 KB svaka).
+ * unicode-range znači da ih preglednik preuzima samo kad na stranici ima arapskih slova.
+ */
+@import '@fontsource/noto-kufi-arabic/400';
+@import '@fontsource/noto-kufi-arabic/600';
+@import '@fontsource/noto-kufi-arabic/800';
 @import 'tailwindcss';
 
 /* Laptop s niskim prozorom (npr. 1366×768 ekran ≈ 657 px visine prozora): kompaktniji hero */
@@ -25,8 +32,8 @@
   --color-kadulja-svijetla: #c9ccb8;
   --color-hrast: #c98a5a; /* hrastovi stolovi */
 
-  --font-display: 'Big Shoulders Display Variable', 'Arial Narrow', 'Roboto Condensed', sans-serif;
-  --font-sans: 'Instrument Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Big Shoulders Display Variable', 'Noto Kufi Arabic', 'Arial Narrow', 'Roboto Condensed', sans-serif;
+  --font-sans: 'Instrument Sans Variable', 'Noto Kufi Arabic', ui-sans-serif, system-ui, sans-serif;
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -165,6 +172,34 @@
       linear-gradient(to top, transparent 0%, #000 16%);
     mask-composite: intersect;
   }
+}
+
+/* Arapski (rtl): fotografija je lijevo, pa se utapa prema desnoj ivici */
+@media (min-width: 1024px) {
+  [dir='rtl'] .hero-fade {
+    -webkit-mask-image:
+      linear-gradient(to left, transparent 0%, rgb(0 0 0 / 0.18) 8%, rgb(0 0 0 / 0.55) 20%, rgb(0 0 0 / 0.88) 34%, #000 46%),
+      linear-gradient(to top, transparent 0%, #000 16%);
+    mask-image:
+      linear-gradient(to left, transparent 0%, rgb(0 0 0 / 0.18) 8%, rgb(0 0 0 / 0.55) 20%, rgb(0 0 0 / 0.88) 34%, #000 46%),
+      linear-gradient(to top, transparent 0%, #000 16%);
+  }
+}
+
+/*
+ * Arapsko pismo: slova se spajaju, pa razmak među slovima mora biti 0;
+ * Kufi ima više tačaka i znakova iznad/ispod slova, pa treba veća visina reda.
+ */
+:lang(ar) * {
+  letter-spacing: 0 !important;
+}
+:lang(ar) .display {
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+:lang(ar) .line-mask {
+  padding-top: 0.08em;
+  padding-bottom: 0.12em;
 }
 
 /* Logo se „pali" kao svijetleća tabla na fasadi, jednom pri učitavanju */

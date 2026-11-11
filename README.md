@@ -18,13 +18,20 @@ npm run preview    # pregled builda: http://localhost:4173
 | **Hero fotografija** + kadriranje | `src/config/site.ts` → `HERO_IMAGE` (`'kebabTanjir'` / `'fasadaNoc'` / `'enterijerSala'`), pa `npm run images` (OG slika) |
 | **Cijene i jelovnik** | `src/data/menu.ts` |
 | Adresa, telefoni, mreže, Viber/Instagram/e-mail | `src/data/business.ts` (`null` = placeholder) |
-| Svi tekstovi, **hero slogan** (3 varijante) | `src/content/bs.ts`: `HERO_VARIANT = 0 / 1 / 2` |
+| **Tekstovi po jeziku** | `src/content/bs.ts`, `en.ts`, `ar.ts` (isti ključevi, tip u `types.ts`) |
+| Jezici i adrese (`/`, `/en/`, `/ar/`) | `src/i18n/locales.ts` |
 | Đački obrok / studentska subvencija | `src/data/menu.ts` → `DACKI_OBROK` (`studentSubsidy.enabled`) |
 | Boje (tokeni) | `src/index.css` → `@theme` |
 | **Placeholderi** (Instagram, Viber, e-mail, opisi jela, [PRIČA], [FOTO]) | `src/config/site.ts` → `SHOW_PLACEHOLDERS` (`false` = demo za vlasnika) |
 | Tekst „O nama" (⚠ čeka odobrenje vlasnika) | `src/content/bs.ts` → `about.story` |
 
 Tabela radnog vremena (s diskretno istaknutim današnjim danom, Europe/Sarajevo) i JSON-LD (`Restaurant`) računaju se iz istih podataka.
+
+## Jezici
+
+Tri jezika, svaki sa svojom prerenderovanom stranicom: **bosanski** `/`, **engleski** `/en/`, **arapski** `/ar/` (`dir="rtl"`, fontovi Noto Kufi Arabic i Noto Sans Arabic se preuzimaju samo na toj stranici).
+Raspored koristi logičke klase (`ms-`, `start-`, `text-end`…), pa se za arapski sam ogleda. Nazivi artikala u meniju dolaze iz `src/data/menu.ts` (bosanski) ili iz `menu.items` u `en.ts` / `ar.ts`.
+⚠ Arapski prijevod treba pregledati izvorni govornik prije objave.
 
 ## Slike
 

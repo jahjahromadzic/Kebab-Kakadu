@@ -20,6 +20,7 @@ export interface Interval {
 }
 
 export interface Schedule {
+  /** interni naziv; prikazani naziv je u src/content/<jezik>.ts → location.scheduleLabels */
   label: string
   /** Izvor podatka, radi lakše provjere. */
   source: string
@@ -70,16 +71,6 @@ export type ScheduleKey = keyof typeof SCHEDULES
 export const ACTIVE_SCHEDULE: ScheduleKey = 'zimsko'
 
 export const activeSchedule: Schedule = SCHEDULES[ACTIVE_SCHEDULE]
-
-export const DAY_NAMES = [
-  'Ponedjeljak',
-  'Utorak',
-  'Srijeda',
-  'Četvrtak',
-  'Petak',
-  'Subota',
-  'Nedjelja',
-] as const
 
 /** Kratki nazivi za schema.org (openingHoursSpecification). */
 export const SCHEMA_DAYS = [

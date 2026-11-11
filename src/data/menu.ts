@@ -101,22 +101,21 @@ export const MENU: MenuCategory[] = [
  * Prikazuje isključivo artikle i cijene s jelovnika (oznaka „đački").
  */
 export const DACKI_OBROK = {
-  title: 'Đački obrok',
+  // naslov je u src/content/<jezik>.ts → menu.dackiTitle
   itemIds: ['kebab-dacki', 'file-dacki'],
   /**
    * Studentska subvencija (UNBI Meal) NIJE na jelovniku, nego u FB objavi 16.10.2026.
    * Isključeno dok vlasnik ne potvrdi da je želi na webu.
    */
-  studentSubsidy: {
-    enabled: false,
-    text: 'Studenti Univerziteta u Bihaću mogu iskoristiti subvenciju UNBI Meal.',
-  },
+  // tekst je u src/content/<jezik>.ts → menu.studentSubsidy
+  studentSubsidy: { enabled: false },
 } as const
 
 export const DELIVERY_FEE = 1
 
-/** 10 → "10,00 KM" (decimalni zarez; ne oslanja se na ICU podatke preglednika) */
-export const formatPrice = (price: number): string => `${price.toFixed(2).replace('.', ',')} ${CURRENCY}`
+/** 10 → "10,00 KM" (bs) / "10.00 KM" (en, ar). Ne oslanja se na ICU podatke preglednika. */
+export const formatPrice = (price: number, decimal: ',' | '.' = ','): string =>
+  `${price.toFixed(2).replace('.', decimal)} ${CURRENCY}`
 
 /** Kratki zapis za traku i oznake: 10 → "10 KM" */
 export const formatPriceShort = (price: number): string => `${price} ${CURRENCY}`

@@ -1,7 +1,7 @@
 /**
  * PODEŠAVANJA PRIKAZA STRANICE.
  */
-import type { ImageKey } from '../data/images.generated'
+import type { ImageKey } from '../data/images.generated.ts'
 
 /**
  * Prikaz elemenata za koje još nema podataka: Instagram, Viber, e-mail,
@@ -19,7 +19,7 @@ export const SHOW_PLACEHOLDERS = false
  */
 export interface HeroImageOption {
   image: ImageKey
-  alt: string
+  /** alt tekst je u src/content/<jezik>.ts → hero.imageAlt */
   mobilePosition: string
   desktopPosition: string
   mobileAspect: string
@@ -30,7 +30,6 @@ export interface HeroImageOption {
 export const HERO_IMAGE_OPTIONS = {
   kebabTanjir: {
     image: 'kebabTanjir',
-    alt: 'Isječeno döner meso s bijelim sosom i ljutom paprikom u lepinji, na tanjiru, u papiru s natpisom Kakadu',
     mobilePosition: '50% 30%',
     desktopPosition: '50% 45%',
     mobileAspect: '4 / 4.4',
@@ -38,7 +37,6 @@ export const HERO_IMAGE_OPTIONS = {
   },
   fasadaNoc: {
     image: 'fasadaKvadrat',
-    alt: 'Fasada Kebab Kakadua noću: svijetleći natpis s dva plamena, okrugla viseća tabla i osvijetljena sala iza izloga',
     mobilePosition: '50% 30%',
     desktopPosition: '45% 35%',
     mobileAspect: '4 / 4.2',
@@ -46,7 +44,6 @@ export const HERO_IMAGE_OPTIONS = {
   },
   enterijerSala: {
     image: 'enterijerSala',
-    alt: 'Sala Kebab Kakadua: hrastovi stolovi, stolice s ukrštenim naslonom, zeleni zidovi i staklena vrata prema ulici',
     mobilePosition: '50% 62%',
     desktopPosition: '50% 58%',
     mobileAspect: '4 / 4.6',
