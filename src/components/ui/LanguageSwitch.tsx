@@ -23,8 +23,13 @@ export function LanguageSwitch({ className = '' }: { className?: string }) {
                   current ? 'bg-zlato text-ugalj' : 'text-krem/80 hover:text-zlato'
                 }`}
               >
-                {/* sistemski font za „ع": inače bi bs/en stranice preuzimale arapski web font samo zbog ove oznake */}
-                <span className={l === 'ar' ? '[font-family:system-ui,sans-serif] text-lg leading-none' : undefined}>{m.label}</span>
+                {/*
+                  „ع": sistemski font (inače bi bs/en stranice preuzimale arapski web font samo zbog ove oznake).
+                  Arapsko slovo u tom fontu sjedi ~3,4 px niže od BS/EN, pa se podiže za 0,19 em (izmjereno).
+                */}
+                <span className={l === 'ar' ? 'block -translate-y-[0.19em] [font-family:system-ui,sans-serif] text-lg leading-none' : undefined}>
+                  {m.label}
+                </span>
               </a>
             </li>
           )
