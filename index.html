@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="bs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>%SITE_TITLE%</title>
+    <meta name="description" content="%SITE_DESCRIPTION%" />
+    <meta name="theme-color" content="#1B1512" />
+    %ROBOTS_META%
+    <meta name="format-detection" content="telephone=yes" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="restaurant" />
+    <meta property="og:locale" content="bs_BA" />
+    <meta property="og:site_name" content="Kebab Kakadu" />
+    <meta property="og:title" content="%SITE_TITLE%" />
+    <meta property="og:description" content="%SITE_DESCRIPTION%" />
+    <meta property="og:image" content="%SITE_URL%/og-kakadu.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="%OG_IMAGE_ALT%" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Hero slika: najveći element na ekranu (LCP), preload odgovarajuće veličine -->
+    %HERO_PRELOAD%
+
+    <script>
+      // Animacije samo ako korisnik ne traži smanjeno kretanje; bez JS-a sadržaj je odmah vidljiv.
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('anim')
+        // Sigurnosna mreža: ako se animacije ne učitaju, prikaži sadržaj.
+        setTimeout(function () {
+          if (!document.documentElement.classList.contains('anim-ready')) document.documentElement.classList.remove('anim')
+        }, 3500)
+      }
+    </script>
+    %JSON_LD%
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding:1rem;font-family:sans-serif;color:#F4EEDC;background:#1B1512">
+        Kebab Kakadu, Mehmedalije Maka Dizdara 6a, Bihać (preko puta Doma Armije). Narudžbe i dostava: 062 550 777 · 063 515 522.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

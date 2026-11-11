@@ -1,0 +1,10 @@
+<!-- PRIVREMENO: SVG rekonstrukcija službenog logotipa Kebab Kakadu (scripts/build-logo.mjs). Zamijeniti originalom vlasnika. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="104" fill="#AB0526"/>
+  <g transform="translate(256 258) scale(0.78) translate(-340 -430)">
+    <path d="M372,232 L368,160" stroke="#F5A945" stroke-width="34" stroke-linecap="round"/>
+    <path d="M262,662 L266,700" stroke="#F5A945" stroke-width="30" stroke-linecap="round"/>
+    <path d="M232,236 C262,222 332,222 374,228 C424,236 462,268 474,318 L338,648 C322,668 270,672 248,656 C222,636 206,560 206,470 C206,380 210,282 232,236 Z" fill="#F5A945"/>
+    <path d="M246,280 Q311,271 376,283 M318,318 Q390,309 462,321 M230,354 Q297,345 364,357 M301,394 Q365,385 430,397 M224,434 Q281,425 338,437 M284,474 Q340,465 397,477 M220,514 Q268,505 317,517 M274,554 Q319,545 364,557 M222,594 Q258,585 294,597 M267,630 Q300,621 332,633" stroke="#AB0526" stroke-width="16" stroke-linecap="round" fill="none"/>
+  </g>
+</svg>

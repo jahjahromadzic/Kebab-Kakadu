@@ -1,0 +1,211 @@
+/* Fontovi: self-hosted (@fontsource), samo latin + latin-ext preko unicode-range, font-display: swap */
+@import '@fontsource-variable/big-shoulders-display';
+@import '@fontsource-variable/instrument-sans';
+@import 'tailwindcss';
+
+/* Laptop s niskim prozorom (npr. 1366×768 ekran ≈ 657 px visine prozora): kompaktniji hero */
+@custom-variant short (@media (min-width: 1024px) and (max-height: 820px));
+
+/*
+ * PALETA: izvedena iz stvarnih fotografija radnje (RESEARCH.md §6).
+ * Kontrast: zlato/plamen kao tekst samo na tamnoj pozadini; crvena je površina, ne tekst na tamnom.
+ */
+@theme {
+  --color-kakadu: #ab0526; /* crvena etiketa službenog logotipa */
+  --color-kakadu-tamna: #7e0a1e;
+  --color-zlato: #f5a945; /* zlatna slova logotipa, amber s plakata */
+  --color-ugalj: #1b1512; /* crna tabla fasade, plafon */
+  --color-ugalj-2: #2a221d; /* kožna sjedišta */
+  --color-ugalj-3: #362c25;
+  --color-krem: #f4eedc; /* svijetleća slova natpisa */
+  --color-plamen: #d9622b; /* sjaj grijača roštilja */
+  --color-plamen-tamni: #b4461a;
+  --color-kadulja: #7e8573; /* venecijanski malter u sali */
+  --color-kadulja-tamna: #3f463a;
+  --color-kadulja-svijetla: #c9ccb8;
+  --color-hrast: #c98a5a; /* hrastovi stolovi */
+
+  --font-display: 'Big Shoulders Display Variable', 'Arial Narrow', 'Roboto Condensed', sans-serif;
+  --font-sans: 'Instrument Sans Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  html,
+  body {
+    overflow-x: clip;
+  }
+  body {
+    background: var(--color-ugalj);
+    color: var(--color-krem);
+    font-family: var(--font-sans);
+    font-feature-settings: 'tnum' 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-zlato);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  ::selection {
+    background: var(--color-zlato);
+    color: var(--color-ugalj);
+  }
+  img,
+  svg {
+    display: block;
+  }
+}
+
+@layer components {
+  /* Zrnasta tekstura (statična SVG šuma): štampani plakat, ne „glatki AI" izgled */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.09;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Venecijanski malter (zidovi sale): mrljasti tonovi kadulje + šuma */
+  .plaster {
+    background-color: var(--color-kadulja-tamna);
+    background-image:
+      radial-gradient(60% 50% at 18% 22%, rgb(126 133 115 / 0.55), transparent 70%),
+      radial-gradient(45% 60% at 82% 30%, rgb(157 161 131 / 0.28), transparent 70%),
+      radial-gradient(70% 55% at 60% 90%, rgb(40 46 37 / 0.6), transparent 70%),
+      radial-gradient(35% 35% at 40% 55%, rgb(126 133 115 / 0.3), transparent 70%);
+  }
+
+  /* Etiketa iz logotipa: crvena površina, tanak zlatni unutrašnji okvir */
+  .etiketa {
+    background: var(--color-kakadu);
+    color: var(--color-krem);
+    border-radius: 0.5rem;
+    box-shadow:
+      inset 0 0 0 2px var(--color-kakadu),
+      inset 0 0 0 3.5px var(--color-zlato);
+  }
+
+  /* Cjenovnik s tačkicama (kao na jelovnik-plakatima) */
+  .leader {
+    flex: 1 1 auto;
+    min-width: 1.5rem;
+    margin-inline: 0.5rem;
+    border-bottom: 2px dotted rgb(201 138 90 / 0.45);
+    transform: translateY(-0.3em);
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-zlato);
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.86;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .safe-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+}
+
+/*
+ * Hero fotografija se postepeno utapa u pozadinu (maska umjesto tamnog sloja),
+ * pa nema vidljive granice prema zrnastoj pozadini ispod teksta.
+ * Mobitel: donja ivica. Desktop: lijeva i donja ivica.
+ */
+.hero-fade {
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, rgb(0 0 0 / 0.6) 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 40%, rgb(0 0 0 / 0.6) 70%, transparent 100%);
+}
+@media (min-width: 1024px) {
+  .hero-fade {
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, rgb(0 0 0 / 0.18) 8%, rgb(0 0 0 / 0.55) 20%, rgb(0 0 0 / 0.88) 34%, #000 46%),
+      linear-gradient(to top, transparent 0%, #000 16%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, rgb(0 0 0 / 0.18) 8%, rgb(0 0 0 / 0.55) 20%, rgb(0 0 0 / 0.88) 34%, #000 46%),
+      linear-gradient(to top, transparent 0%, #000 16%);
+    mask-composite: intersect;
+  }
+}
+
+/* Logo se „pali" kao svijetleća tabla na fasadi, jednom pri učitavanju */
+@keyframes neon-on {
+  0% { opacity: 0.15; }
+  8% { opacity: 1; }
+  12% { opacity: 0.35; }
+  20% { opacity: 1; }
+  24% { opacity: 0.6; }
+  32%, 100% { opacity: 1; }
+}
+.neon-on {
+  animation: neon-on 900ms steps(1, end) 200ms both;
+}
+
+/*
+ * Početna stanja za scroll animacije postavljaju se SAMO kad JS doda klasu
+ * `anim` na <html> (i korisnik ne traži smanjeno kretanje). Bez JS-a ili uz
+ * prefers-reduced-motion sadržaj je odmah vidljiv.
+ */
+html.anim [data-reveal] {
+  opacity: 0;
+  transform: translateY(1.5rem);
+}
+html.anim [data-reveal-line] > span {
+  transform: translateY(105%);
+}
+html.anim [data-reveal-clip] {
+  clip-path: inset(0 0 100% 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-on {
+    animation: none;
+  }
+}
+
+/* Maska za animaciju redova naslova. Gornji prostor čuva dijakritike (Ž, Č, Ć, Š) od odsijecanja. */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-top: 0.16em;
+  padding-bottom: 0.04em;
+}

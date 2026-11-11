@@ -1,0 +1,17 @@
+node_modules
+dist
+.DS_Store
+*.local
+dist-ssr
+
+# generisano / privremeno
+research/lighthouse/
+research/contact/
+research/optimize-log.txt
+research/trace/*.png
+!research/trace/ref.png
+research/trace/overlay.html
+.claude/
+
+# Netlify CLI
+.netlify/
