@@ -1,0 +1,5 @@
+# Netlify: demo deploy (s <meta name="robots" content="noindex">).
+# Za pravu objavu promijeni komandu u "npm run build".
+[build]
+  command = "npm run build:demo"
+  publish = "dist"
