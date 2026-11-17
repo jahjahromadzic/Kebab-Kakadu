@@ -1,6 +1,6 @@
 import logoUrl from '../../assets/svg/logo-kakadu.svg'
 import { SHOW_PLACEHOLDERS } from '../../config/site'
-import { CREDIT } from '../../content'
+import { CREDIT, CREDIT_URL } from '../../content'
 import { BUSINESS } from '../../data/business'
 import { useI18n } from '../../i18n/context'
 import { Handwriting } from '../brand/Handwriting'
@@ -81,8 +81,15 @@ export function Footer() {
             {BUSINESS.name} · <bdi>{BUSINESS.address.street}, {BUSINESS.address.postalCode} {BUSINESS.address.city}</bdi>
             {SHOW_PLACEHOLDERS && ` · ${footer.madeFor} · ${footer.logoNote}`}
           </p>
-          <p dir="ltr" className="font-display text-sm font-extrabold uppercase tracking-[0.16em] text-krem/80">
-            {CREDIT}
+          <p dir="ltr" className="font-display text-sm font-extrabold uppercase tracking-[0.16em]">
+            <a
+              href={CREDIT_URL}
+              target="_blank"
+              rel="noopener"
+              className="text-krem/80 underline decoration-zlato/50 decoration-1 underline-offset-4 transition-colors hover:text-zlato hover:decoration-zlato"
+            >
+              {CREDIT}
+            </a>
           </p>
         </div>
       </div>
