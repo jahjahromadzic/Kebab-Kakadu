@@ -3,38 +3,41 @@ import { useI18n } from '../../i18n/context'
 import { PhoneIcon } from './Icons'
 
 /**
- * Primarni CTA „Pozovi i naruči": zelena kartica (boja zidova), oba broja kao tel: linkovi
- * na bijeloj podlozi s crnim brojevima (zahtjev vlasnice, 17.11.2026.).
+ * Primarni CTA „Pozovi i naruči": zaobljeno dugme (pill) s glavnim brojem i
+ * diskretan tekstualni link za drugi broj.
+ * Svijetla podloga i tamni brojevi (zahtjev vlasnice), u toploj krem boji umjesto čiste bijele.
  */
 export function CallOrder({ className = '' }: { className?: string }) {
   const { t } = useI18n()
   const [main, second] = BUSINESS.phones
   return (
-    <div className={`etiketa inline-flex flex-col gap-2 p-3 ${className}`} role="group" aria-label={t.cta.callOrder}>
-      <p className="flex items-center gap-2 px-1 font-display text-sm font-extrabold uppercase tracking-[0.18em] text-krem">
-        <PhoneIcon size={16} className="text-zlato" />
+    <div className={`flex flex-col gap-3 ${className}`} role="group" aria-label={t.cta.callOrder}>
+      <p className="eyebrow flex items-center gap-2">
+        <PhoneIcon size={15} />
         {t.cta.callOrder}
       </p>
-      <a
-        href={`tel:${main.tel}`}
-        className="group flex items-center justify-between gap-4 rounded-md bg-white px-4 py-3 text-[#111] shadow-[0_4px_14px_rgb(0_0_0/0.18)] transition-transform duration-200 hover:-translate-y-0.5"
-      >
-        <span dir="ltr" className="display tabular text-[2.1rem] sm:text-[2.4rem]">
-          {main.display}
-        </span>
-        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-kakadu text-white transition-transform duration-300 ease-out-expo group-hover:-rotate-12">
-          <PhoneIcon size={20} />
-        </span>
-      </a>
-      <a
-        href={`tel:${second.tel}`}
-        className="flex items-center justify-between gap-3 rounded-md bg-white px-4 py-2 text-[#111] transition-transform duration-200 hover:-translate-y-0.5"
-      >
-        <span className="text-sm text-[#111]/65">{t.cta.or}</span>
-        <span dir="ltr" className="display tabular text-xl tracking-wide">
-          {second.display}
-        </span>
-      </a>
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a
+          href={`tel:${main.tel}`}
+          className="group inline-flex items-center gap-3 rounded-full bg-krem py-2 ps-2 pe-6 text-ugalj shadow-[0_14px_34px_rgb(0_0_0/0.4)] ring-1 ring-zlato/40 transition-transform duration-300 ease-out-expo hover:-translate-y-0.5"
+        >
+          <span className="grid size-12 shrink-0 place-items-center rounded-full bg-kakadu text-krem transition-transform duration-300 ease-out-expo group-hover:-rotate-12">
+            <PhoneIcon size={22} />
+          </span>
+          <span dir="ltr" className="display tabular text-[2.1rem] leading-none sm:text-[2.4rem]">
+            {main.display}
+          </span>
+        </a>
+        <a href={`tel:${second.tel}`} className="group flex flex-col leading-tight text-krem/85 transition-colors hover:text-zlato">
+          <span className="text-xs uppercase tracking-[0.16em] text-krem/60">{t.cta.or}</span>
+          <span
+            dir="ltr"
+            className="display tabular text-2xl underline decoration-zlato/60 decoration-2 underline-offset-4 group-hover:decoration-zlato"
+          >
+            {second.display}
+          </span>
+        </a>
+      </div>
     </div>
   )
 }

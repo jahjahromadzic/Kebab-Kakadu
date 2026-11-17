@@ -67,7 +67,7 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-end gap-x-8 gap-y-5 short:mt-5" data-reveal>
-            <CallOrder className="w-full max-w-[22rem] shadow-[0_18px_40px_rgb(0_0_0/0.45)] sm:w-auto" />
+            <CallOrder />
             <a
               href="#meni"
               className="mb-2 inline-flex items-center font-display text-lg font-extrabold uppercase tracking-[0.12em] text-krem underline decoration-zlato decoration-2 underline-offset-[6px] transition-colors hover:text-zlato"
