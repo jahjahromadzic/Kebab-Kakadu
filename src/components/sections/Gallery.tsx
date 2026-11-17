@@ -124,8 +124,8 @@ export function Gallery() {
               className="mx-auto block w-fit"
               imgClassName="block h-auto max-h-[78svh] w-auto max-w-full object-contain"
             />
-            <figcaption className="mt-3 flex items-center justify-between gap-4 text-sm text-krem/85">
-              <span>{alt(current.image)}</span>
+            {/* bez vidljivog opisa slike (zahtjev); opis ostaje samo u alt tekstu za čitače ekrana */}
+            <div className="mt-3 flex items-center justify-end">
               <span className="flex shrink-0 gap-2">
                 <button type="button" onClick={() => step(-1)} aria-label={t.gallery.prev} className="grid size-11 place-items-center rounded-full bg-ugalj-3 hover:bg-kakadu">
                   <ArrowIcon className="rotate-180 rtl:rotate-0" />
@@ -137,7 +137,7 @@ export function Gallery() {
                   <CloseIcon />
                 </button>
               </span>
-            </figcaption>
+            </div>
           </figure>
         )}
       </dialog>

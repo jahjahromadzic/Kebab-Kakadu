@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "images": "node scripts/optimize-images.mjs",
     "trace": "node scripts/trace-handwriting.mjs",
-    "logo": "node scripts/build-logo.mjs",
+    "logo": "node scripts/build-logo.mjs && node scripts/build-icons.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
