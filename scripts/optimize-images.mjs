@@ -23,7 +23,8 @@ const IMAGES = {
   // Nove fotografije od vlasnice (17.11.2026.): zamjenjuju tortilju u autu i staru lepinju (stara lokacija).
   kebabParadajz: { file: 'kebab-paradajz.jpg' },
   kebabUSali: { file: 'kebab-u-sali.jpg' },
-  enterijerSala: { file: 'enterijer-sala.jpg', widths: [480, 640, 800, 1000, 1200, 1600] },
+  // brightness: posvijetljeno na zahtjev vlasnice (naslovna fotografija)
+  enterijerSala: { file: 'enterijer-sala.jpg', widths: [480, 640, 800, 1000, 1200, 1600], brightness: 1.15 },
   // Original je već izrezan na natpis (bez gostiju u kadru), pa ovdje nema dodatnog izreza.
   fasadaSumrak: { file: 'fasada-sumrak.jpg' },
   fasadaKvadrat: { file: 'fasada-noc-kvadrat.jpg', widths: [480, 640, 800, 960] },
@@ -34,7 +35,7 @@ mkdirSync(OUT, { recursive: true })
 
 const result = {}
 
-for (const [key, { file, crop, widths: customWidths, avifQuality = 52 }] of Object.entries(IMAGES)) {
+for (const [key, { file, crop, widths: customWidths, avifQuality = 52, brightness }] of Object.entries(IMAGES)) {
   const input = readFileSync(new URL(file, SRC))
   const meta = await sharp(input).rotate().metadata()
   let pipeline = sharp(input).rotate()
@@ -52,6 +53,7 @@ for (const [key, { file, crop, widths: customWidths, avifQuality = 52 }] of Obje
     w = region.width
     h = region.height
   }
+  if (brightness) pipeline = pipeline.modulate({ brightness })
   const base = await pipeline.toBuffer()
   const { dominant } = await sharp(base).stats()
   const widths = [...new Set((customWidths ?? WIDTHS).filter((x) => x < w).concat(Math.min(w, 1600)))].sort((a, b) => a - b)

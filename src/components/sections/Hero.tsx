@@ -50,7 +50,7 @@ export function Hero() {
             {/* blago zatamnjenje fotografije radi čitljivosti naslova; ivice se same utapaju (.hero-fade) */}
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-[linear-gradient(to_top,rgb(27_21_18/0.55),transparent_55%)] lg:bg-[linear-gradient(to_right,rgb(27_21_18/0.55)_0%,rgb(27_21_18/0.2)_45%,transparent_70%)] rtl:lg:bg-[linear-gradient(to_left,rgb(27_21_18/0.55)_0%,rgb(27_21_18/0.2)_45%,transparent_70%)]"
+              className="absolute inset-0 bg-[linear-gradient(to_top,rgb(27_21_18/0.4),transparent_45%)] lg:bg-[linear-gradient(to_right,rgb(27_21_18/0.35)_0%,rgb(27_21_18/0.1)_40%,transparent_60%)] rtl:lg:bg-[linear-gradient(to_left,rgb(27_21_18/0.35)_0%,rgb(27_21_18/0.1)_40%,transparent_60%)]"
             />
           </div>
         </div>
