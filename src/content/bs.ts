@@ -30,7 +30,6 @@ export const bs: Content = {
     // Odabrao klijent 11.11.2026.
     lines: ['Kebab Kakadu,', 'od 2010.'],
     sub: 'Kebab, pileći file, tortilje i burgeri. Mehmedalije Maka Dizdara 6a, preko puta Doma Armije. Narudžbe i dostava putem telefona.',
-    menuLink: 'Meni i cijene',
     imageAlt: {
       kebabTanjir: 'Isječeno döner meso s bijelim sosom i ljutom paprikom u lepinji, na tanjiru, u papiru s natpisom Kakadu',
       fasadaNoc: 'Fasada Kebab Kakadua noću: svijetleći natpis s dva plamena, okrugla viseća tabla i osvijetljena sala iza izloga',

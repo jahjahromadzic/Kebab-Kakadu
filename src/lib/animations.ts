@@ -37,8 +37,11 @@ export function initAnimations(): () => void {
       )
     })
 
-    // 2) Blokovi teksta: blagi fade + pomak
-    ScrollTrigger.batch('[data-reveal]', {
+    // 2) Blokovi teksta: blagi fade + pomak.
+    //    U heroju odmah pri otvaranju (hero je tačno visine ekrana, pa CTA može biti
+    //    ispod granice od 90 % i inače bi se pojavio tek na scroll).
+    gsap.to('#top [data-reveal]', { opacity: 1, y: 0, duration: 0.9, ease: EASE, delay: 0.35, stagger: 0.08 })
+    ScrollTrigger.batch('[data-reveal]:not(#top [data-reveal])', {
       start: 'top 90%',
       once: true,
       onEnter: (batch) =>

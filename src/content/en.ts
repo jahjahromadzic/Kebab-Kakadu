@@ -27,7 +27,6 @@ export const en: Content = {
   hero: {
     lines: ['Kebab Kakadu,', 'since 2010.'],
     sub: 'Kebab, chicken fillet, tortillas and burgers. Mehmedalije Maka Dizdara 6a, across from Dom Armije. Orders and delivery by phone.',
-    menuLink: 'Menu & prices',
     imageAlt: {
       kebabTanjir: 'Sliced döner meat with white sauce and chili flakes in flatbread, on a plate, in paper printed with Kakadu',
       fasadaNoc: 'Kebab Kakadu at night: illuminated sign with two flames, round hanging sign and the lit dining room behind the window',

@@ -22,7 +22,6 @@ export interface Content {
     /** svaki red naslova je zaseban element (raspored i animacija) */
     lines: string[]
     sub: string
-    menuLink: string
     imageAlt: Record<HeroImageKey, string>
   }
   menu: {

@@ -29,9 +29,10 @@ export function Hero() {
       {/*
         Telefon i tablet: hero je tačno visine ekrana ispod headera (100svh − 4rem − 1px ivica headera), pa je prvi ekran
         uvijek isti i „Meni" počinje tek ispod njega. Fotografija uzima prostor koji ostane iznad teksta.
-        Desktop: raspored u 12 kolona, visina prema sadržaju.
+        Laptop/desktop: raspored u 12 kolona, najmanje visine ekrana ispod headera (5rem + 1px),
+        pa se ni tamo „Meni" ne vidi prije skrolanja.
       */}
-      <div className="relative mx-auto flex h-[calc(100svh-4rem-1px)] max-w-[90rem] flex-col lg:grid lg:h-auto lg:min-h-[34rem] lg:grid-cols-12">
+      <div className="relative mx-auto flex h-[calc(100svh-4rem-1px)] max-w-[90rem] flex-col lg:grid lg:h-auto lg:min-h-[max(28rem,calc(100svh-5rem-1px))] lg:grid-cols-12">
         {/* Fotografija */}
         <div className="relative min-h-[7rem] flex-1 lg:col-span-7 lg:col-start-6 lg:row-start-1">
           <div
@@ -71,14 +72,8 @@ export function Hero() {
             {t.hero.sub}
           </p>
 
-          <div className="mt-6 flex flex-wrap items-end gap-x-8 gap-y-4 short:mt-5 short-m:mt-4 short-m:gap-y-3" data-reveal>
+          <div className="mt-6 short:mt-5 short-m:mt-4" data-reveal>
             <CallOrder />
-            <a
-              href="#meni"
-              className="mb-2 inline-flex items-center font-display text-lg font-extrabold uppercase tracking-[0.12em] text-krem underline decoration-zlato decoration-2 underline-offset-[6px] transition-colors hover:text-zlato"
-            >
-              {t.hero.menuLink}
-            </a>
           </div>
         </div>
       </div>
