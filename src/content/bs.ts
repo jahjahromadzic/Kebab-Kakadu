@@ -7,9 +7,9 @@ import type { Content } from './types.ts'
 
 export const bs: Content = {
   meta: {
-    title: 'Kebab Kakadu Bihać | Döner kebab od 2010. · Dostava 1 KM',
+    title: 'Kebab Kakadu Bihać | Döner kebab od 2010.',
     description:
-      'Kebab Kakadu u Bihaću, preko puta Doma Armije (Mehmedalije Maka Dizdara 6a). Kebab, pileći file, tortilje i burgeri. Dostava na adresu 1 KM. Telefon: 062 550 777.',
+      'Kebab Kakadu u Bihaću, preko puta Doma Armije (Mehmedalije Maka Dizdara 6a). Kebab, pileći file, tortilje i burgeri. Narudžbe i dostava: 062 550 777.',
     ogImageAlt: 'Logo Kakadu Döner Kebab na fotografiji iz radnje',
   },
   skipLink: 'Preskoči na sadržaj',
@@ -24,13 +24,12 @@ export const bs: Content = {
   ],
   cta: {
     callOrder: 'Pozovi i naruči',
-    deliveryLine: 'Dostava na adresu — 1 KM',
     or: 'ili',
   },
   hero: {
     // Odabrao klijent 11.11.2026.
     lines: ['Kebab Kakadu,', 'od 2010.'],
-    sub: 'Kebab, pileći file, tortilje i burgeri. Mehmedalije Maka Dizdara 6a, preko puta Doma Armije. Narudžbe telefonom, dostava na adresu 1 KM.',
+    sub: 'Kebab, pileći file, tortilje i burgeri. Mehmedalije Maka Dizdara 6a, preko puta Doma Armije. Narudžbe i dostava putem telefona.',
     menuLink: 'Meni i cijene',
     imageAlt: {
       kebabTanjir: 'Isječeno döner meso s bijelim sosom i ljutom paprikom u lepinji, na tanjiru, u papiru s natpisom Kakadu',
@@ -41,7 +40,8 @@ export const bs: Content = {
   menu: {
     title: 'Meni',
     note: 'Sve cijene su u KM.',
-    deliveryNote: 'Dostava samo u toku radnog vremena.',
+    // Dostava je navedena samo ispod menija (vlasnica, 17.11.2026.)
+    delivery: 'Dostava na adresu: 1\u00a0KM · samo u toku radnog vremena.',
     categoriesLabel: 'Kategorije menija',
     descriptionPlaceholder: '[OPIS JELA]',
     // Bosanski nazivi dolaze iz src/data/menu.ts (izvor: jelovnik radnje).
@@ -50,9 +50,9 @@ export const bs: Content = {
     dackiTitle: 'Đački obrok',
     studentSubsidy: 'Studenti Univerziteta u Bihaću mogu iskoristiti subvenciju UNBI Meal.',
     photoAlt: {
-      kebabLepinja: 'Kebab u pečenoj lepinji sa zelenom salatom i bijelim sosom, umotan u papir',
+      kebabUSali: 'Kebab u lepinji sa sosom i ljutom paprikom, u papiru s natpisom Kakadu, u sali radnje',
       kebabTanjir: 'Isječeno döner meso s bijelim sosom i ljutom paprikom na tanjiru, u papiru s natpisom Kakadu',
-      kebabTortilja: 'Kebab u tortilji s paradajzom i salatom, umotan u foliju',
+      kebabParadajz: 'Kebab u lepinji s paradajzom, zelenom salatom i bijelim sosom, u papiru s natpisom Kakadu',
       kebabSalate: 'Kebab s puno mesa pored posuda sa svježim kupusom, zelenom salatom i sosom',
     },
   },
@@ -67,13 +67,12 @@ export const bs: Content = {
     story: [
       'Kebab Kakadu radi u Bihaću od 2010. godine.',
       'Nalazimo se u Ulici Mehmedalije Maka Dizdara 6a, preko puta Doma Armije, nekadašnjeg 077.',
-      'Dostavu radimo sami: narudžbe primamo telefonom, a dostava na adresu košta 1 KM.',
+      'Dostavu radimo sami, a narudžbe primamo telefonom.',
     ],
     paragraphs: ['Hrana se može jesti u radnji ili ponijeti.'],
     storyPlaceholder: '[PRIČA: kratka priča vlasnika, npr. ko je otvorio radnju, šta je posebno u mesu i sosu]',
     facts: [
       { k: 'Otvoreno', v: '2010.' },
-      { k: 'Dostava', v: '1 KM' },
       { k: 'Adresa', v: 'Mehmedalije Maka Dizdara 6a' },
     ],
     imageAlt:
@@ -90,8 +89,8 @@ export const bs: Content = {
       fasadaSumrak: 'Svijetleći natpis Kebab Kakadu s dva plamena iznad ulaza u sumrak',
       kebabTanjir: 'Döner meso s bijelim sosom i ljutom paprikom na tanjiru, u papiru s natpisom Kakadu',
       kebabSalate: 'Kebab s puno mesa pored posuda sa svježim kupusom, zelenom salatom i sosom',
-      kebabLepinja: 'Kebab u pečenoj lepinji sa zelenom salatom i bijelim sosom, umotan u papir',
-      kebabTortilja: 'Kebab u tortilji s paradajzom i salatom, umotan u foliju',
+      kebabUSali: 'Kebab u lepinji sa sosom i ljutom paprikom, u papiru s natpisom Kakadu, u sali radnje',
+      kebabParadajz: 'Kebab u lepinji s paradajzom, zelenom salatom i bijelim sosom, u papiru s natpisom Kakadu',
     },
     creditPlaceholder: '[FOTO: zamijeniti vlastitim fotografijama]',
   },

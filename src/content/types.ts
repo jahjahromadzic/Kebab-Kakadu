@@ -2,7 +2,7 @@ import type { ScheduleKey } from '../config/hours'
 import type { HeroImageKey } from '../config/site'
 import type { ImageKey } from '../data/images.generated'
 
-type MenuPhotoKey = 'kebabLepinja' | 'kebabTanjir' | 'kebabTortilja' | 'kebabSalate'
+type MenuPhotoKey = 'kebabUSali' | 'kebabTanjir' | 'kebabParadajz' | 'kebabSalate'
 
 /**
  * Oblik svih tekstova stranice. Svaki jezik (bs.ts, en.ts, ar.ts) mora imati sve
@@ -16,8 +16,6 @@ export interface Content {
   nav: { href: string; label: string }[]
   cta: {
     callOrder: string
-    /** podnaslov uz dugme „Pozovi i naruči" */
-    deliveryLine: string
     or: string
   }
   hero: {
@@ -30,7 +28,8 @@ export interface Content {
   menu: {
     title: string
     note: string
-    deliveryNote: string
+    /** dostava: prikazuje se samo ispod menija */
+    delivery: string
     categoriesLabel: string
     descriptionPlaceholder: string
     /** prijevodi naziva kategorija i artikala po id-u; bez prijevoda ostaje naziv iz src/data/menu.ts */

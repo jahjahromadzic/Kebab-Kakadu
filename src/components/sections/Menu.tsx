@@ -106,15 +106,15 @@ function useActiveCategory(ids: string[]) {
 const MAIN = MENU.slice(0, 3)
 const REST = MENU.slice(3)
 const CATEGORY_IDS = MENU.map((c) => c.id)
-const PHOTO_KEYS = ['kebabLepinja', 'kebabTanjir', 'kebabTortilja', 'kebabSalate'] as const
+const PHOTO_KEYS = ['kebabUSali', 'kebabTanjir', 'kebabParadajz', 'kebabSalate'] as const
 
 export function Menu() {
   const { t } = useI18n()
   const names = useNames()
   const active = useActiveCategory(CATEGORY_IDS)
-  const photoKey = MENU.find((c) => c.id === active)?.image ?? 'kebabLepinja'
+  const photoKey = MENU.find((c) => c.id === active)?.image ?? 'kebabUSali'
   // Fotografija se dodaje tek kad njena kategorija prvi put postane aktivna (manje preuzimanja na startu).
-  const [shown, setShown] = useState<string[]>(['kebabLepinja'])
+  const [shown, setShown] = useState<string[]>(['kebabUSali'])
   useEffect(() => {
     setShown((s) => (s.includes(photoKey) ? s : [...s, photoKey]))
   }, [photoKey])
@@ -129,8 +129,6 @@ export function Menu() {
           </h2>
           <p className="max-w-[32ch] pb-2 text-krem/75 lg:text-end" data-reveal>
             {t.menu.note}
-            <br />
-            {t.menu.deliveryNote}
           </p>
         </div>
 
@@ -200,6 +198,12 @@ export function Menu() {
             <Category key={c.id} category={c} />
           ))}
         </div>
+
+        {/* Dostava: samo ovdje, ispod menija, bez isticanja (vlasnica, 17.11.2026.) */}
+        <p className="mt-14 flex items-center gap-2.5 border-t border-hrast/20 pt-6 text-krem/75">
+          <DonerIcon size={20} className="shrink-0 text-zlato" />
+          <span>{t.menu.delivery}</span>
+        </p>
       </div>
     </section>
   )

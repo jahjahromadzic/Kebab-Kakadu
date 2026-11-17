@@ -1,6 +1,6 @@
 import { SCHEMA_DAYS, activeSchedule } from '../config/hours.ts'
 import { BUSINESS } from '../data/business.ts'
-import { MENU, CURRENCY } from '../data/menu.ts'
+import { MENU } from '../data/menu.ts'
 
 /**
  * schema.org Restaurant, generiše se iz istih podataka kao i stranica,
@@ -49,7 +49,7 @@ export function buildRestaurantJsonLd(siteUrl: string) {
     hasMap: BUSINESS.maps.place,
     openingHoursSpecification,
     sameAs,
-    description: `Döner kebab u Bihaću od ${BUSINESS.founded}. Preko puta Doma Armije. Dostava ${BUSINESS.delivery.fee} ${CURRENCY}.`,
+    description: `Döner kebab u Bihaću od ${BUSINESS.founded}. Preko puta Doma Armije.`,
     menu: {
       '@type': 'Menu',
       inLanguage: 'bs',

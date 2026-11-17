@@ -18,10 +18,11 @@ const WIDTHS = [480, 800, 1200, 1600]
  * crop: udio slike [x, y, w, h] (0–1). Izrezi uklanjaju račune, lica gostiju i crne trake.
  */
 const IMAGES = {
-  kebabLepinja: { file: 'kebab-lepinja.jpg', crop: [0, 0.36, 1, 0.48] },
   kebabTanjir: { file: 'kebab-tanjir.jpg', crop: [0, 0.12, 1, 0.76], widths: [480, 640, 800, 1000, 1200, 1600] },
   kebabSalate: { file: 'kebab-salate.jpg', crop: [0, 0, 1, 0.78] },
-  kebabTortilja: { file: 'kebab-tortilja.jpg', crop: [0.18, 0.4, 0.82, 0.6] },
+  // Nove fotografije od vlasnice (17.11.2026.): zamjenjuju tortilju u autu i staru lepinju (stara lokacija).
+  kebabParadajz: { file: 'kebab-paradajz.jpg' },
+  kebabUSali: { file: 'kebab-u-sali.jpg' },
   enterijerSala: { file: 'enterijer-sala.jpg', widths: [480, 640, 800, 1000, 1200, 1600] },
   // Original je već izrezan na natpis (bez gostiju u kadru), pa ovdje nema dodatnog izreza.
   fasadaSumrak: { file: 'fasada-sumrak.jpg' },

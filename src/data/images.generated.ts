@@ -10,14 +10,6 @@ export interface OptimizedImage {
 }
 
 export const IMAGES = {
-  kebabLepinja: {
-    width: 921,
-    height: 983,
-    avif: '/images/opt/kebab-lepinja-480.avif 480w, /images/opt/kebab-lepinja-800.avif 800w, /images/opt/kebab-lepinja-921.avif 921w',
-    webp: '/images/opt/kebab-lepinja-480.webp 480w, /images/opt/kebab-lepinja-800.webp 800w, /images/opt/kebab-lepinja-921.webp 921w',
-    fallback: '/images/opt/kebab-lepinja-800.webp',
-    color: 'rgb(232 216 200)',
-  },
   kebabTanjir: {
     width: 1800,
     height: 1824,
@@ -34,13 +26,21 @@ export const IMAGES = {
     fallback: '/images/opt/kebab-salate-800.webp',
     color: 'rgb(72 72 72)',
   },
-  kebabTortilja: {
-    width: 1476,
-    height: 1440,
-    avif: '/images/opt/kebab-tortilja-480.avif 480w, /images/opt/kebab-tortilja-800.avif 800w, /images/opt/kebab-tortilja-1200.avif 1200w, /images/opt/kebab-tortilja-1476.avif 1476w',
-    webp: '/images/opt/kebab-tortilja-480.webp 480w, /images/opt/kebab-tortilja-800.webp 800w, /images/opt/kebab-tortilja-1200.webp 1200w, /images/opt/kebab-tortilja-1476.webp 1476w',
-    fallback: '/images/opt/kebab-tortilja-800.webp',
-    color: 'rgb(24 40 56)',
+  kebabParadajz: {
+    width: 1200,
+    height: 1600,
+    avif: '/images/opt/kebab-paradajz-480.avif 480w, /images/opt/kebab-paradajz-800.avif 800w, /images/opt/kebab-paradajz-1200.avif 1200w',
+    webp: '/images/opt/kebab-paradajz-480.webp 480w, /images/opt/kebab-paradajz-800.webp 800w, /images/opt/kebab-paradajz-1200.webp 1200w',
+    fallback: '/images/opt/kebab-paradajz-800.webp',
+    color: 'rgb(232 216 184)',
+  },
+  kebabUSali: {
+    width: 1200,
+    height: 1600,
+    avif: '/images/opt/kebab-u-sali-480.avif 480w, /images/opt/kebab-u-sali-800.avif 800w, /images/opt/kebab-u-sali-1200.avif 1200w',
+    webp: '/images/opt/kebab-u-sali-480.webp 480w, /images/opt/kebab-u-sali-800.webp 800w, /images/opt/kebab-u-sali-1200.webp 1200w',
+    fallback: '/images/opt/kebab-u-sali-800.webp',
+    color: 'rgb(8 8 8)',
   },
   enterijerSala: {
     width: 1536,

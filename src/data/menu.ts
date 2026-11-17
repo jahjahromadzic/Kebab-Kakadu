@@ -19,7 +19,7 @@ export interface MenuCategory {
   name: string
   items: MenuItem[]
   /** Fotografija uz kategoriju (ključ iz src/data/images.ts). */
-  image?: 'kebabLepinja' | 'kebabTanjir' | 'kebabTortilja' | 'kebabSalate'
+  image?: 'kebabUSali' | 'kebabTanjir' | 'kebabParadajz' | 'kebabSalate'
 }
 
 export const CURRENCY = 'KM'
@@ -28,7 +28,7 @@ export const MENU: MenuCategory[] = [
   {
     id: 'kebab',
     name: 'Kebab',
-    image: 'kebabLepinja',
+    image: 'kebabUSali',
     items: [
       { id: 'kebab-veliki', name: 'Kebab (veliki)', price: 10 },
       { id: 'kebab-mali', name: 'Kebab (mali)', price: 8 },
@@ -49,7 +49,7 @@ export const MENU: MenuCategory[] = [
   {
     id: 'tortilje',
     name: 'Tortilje',
-    image: 'kebabTortilja',
+    image: 'kebabParadajz',
     items: [
       { id: 'tortilja-kebab-velika', name: 'Tortilja kebab (velika)', price: 10 },
       { id: 'tortilja-kebab-mala', name: 'Tortilja kebab (mala)', price: 8 },

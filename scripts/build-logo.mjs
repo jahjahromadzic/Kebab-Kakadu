@@ -16,7 +16,9 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import opentype from 'opentype.js'
 
-const RED = '#AB0526'
+// Boja etikete: na zahtjev vlasnice (17.11.2026.) zelena boja zidova iz sale umjesto crvene.
+// Izvorni crveni logo: #AB0526.
+const RED = '#555B4E'
 const GOLD = '#F5A945'
 
 const nm = (p) => new URL(`../node_modules/${p}`, import.meta.url)

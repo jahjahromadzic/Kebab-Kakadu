@@ -12,7 +12,7 @@ export function Footer() {
   const { footer } = t
   const [main, second] = BUSINESS.phones
   return (
-    <footer id="kontakt" aria-labelledby="kontakt-title" className="grain relative overflow-hidden bg-kakadu-tamna pb-40 pt-20 md:pb-12 lg:pt-28">
+    <footer id="kontakt" aria-labelledby="kontakt-title" className="grain relative overflow-hidden bg-kakadu-tamna pb-32 pt-20 md:pb-12 lg:pt-28">
       <div className="mx-auto max-w-[90rem] px-4 sm:px-6 lg:px-10">
         <h2 id="kontakt-title" className="display text-[clamp(3.5rem,13vw,8rem)] text-krem" data-reveal>
           {footer.title}

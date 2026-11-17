@@ -15,11 +15,14 @@
 
 /*
  * PALETA: izvedena iz stvarnih fotografija radnje (RESEARCH.md §6).
- * Kontrast: zlato/plamen kao tekst samo na tamnoj pozadini; crvena je površina, ne tekst na tamnom.
+ * Kontrast: zlato/plamen kao tekst samo na tamnoj pozadini; zelena (kakadu) je površina, ne tekst na tamnom.
  */
 @theme {
-  --color-kakadu: #ab0526; /* crvena etiketa službenog logotipa */
-  --color-kakadu-tamna: #7e0a1e;
+  /* Boja brenda: zelena boja zidova iz sale (vlasnica, 17.11.2026.), zatamnjena radi kontrasta teksta.
+     Zid: #7E8574 · površine (logo, kartice): #555B4E (krem 6,05 / bijela 7,0) · tamna (footer): #41453B.
+     Prije: crvena etiketa logotipa #AB0526. */
+  --color-kakadu: #555b4e;
+  --color-kakadu-tamna: #41453b;
   --color-zlato: #f5a945; /* zlatna slova logotipa, amber s plakata */
   --color-ugalj: #1b1512; /* crna tabla fasade, plafon */
   --color-ugalj-2: #2a221d; /* kožna sjedišta */
@@ -103,7 +106,7 @@
       radial-gradient(35% 35% at 40% 55%, rgb(126 133 115 / 0.3), transparent 70%);
   }
 
-  /* Etiketa iz logotipa: crvena površina, tanak zlatni unutrašnji okvir */
+  /* Etiketa iz logotipa: zelena površina (boja zidova), tanak zlatni unutrašnji okvir */
   .etiketa {
     background: var(--color-kakadu);
     color: var(--color-krem);

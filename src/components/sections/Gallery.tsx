@@ -10,8 +10,9 @@ import { Picture } from '../ui/Picture'
  * Fotografije redom; hero fotografija (HERO_IMAGE) se ovdje preskače da se ne ponavlja.
  * Alt tekstovi su u src/content/<jezik>.ts → gallery.alts.
  * Fotografija šanka (enterijerSank) je izbačena: u kadru su radnici.
+ * Tortilja u autu i stara lepinja (stara lokacija) zamijenjene su novim fotografijama (17.11.2026.).
  */
-const PHOTOS: ImageKey[] = ['fasadaSumrak', 'kebabTanjir', 'kebabSalate', 'kebabLepinja', 'kebabTortilja']
+const PHOTOS: ImageKey[] = ['fasadaSumrak', 'kebabUSali', 'kebabParadajz', 'kebabTanjir', 'kebabSalate']
 
 /**
  * Uredna mreža: 1. red široka + jedna fotografija, 2. red tri jednake.

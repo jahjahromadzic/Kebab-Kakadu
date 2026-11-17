@@ -5,9 +5,9 @@ import type { Content } from './types.ts'
 
 export const en: Content = {
   meta: {
-    title: 'Kebab Kakadu Bihać | Döner kebab since 2010 · Delivery 1 KM',
+    title: 'Kebab Kakadu Bihać | Döner kebab since 2010',
     description:
-      'Kebab Kakadu in Bihać, across from Dom Armije (Mehmedalije Maka Dizdara 6a). Kebab, chicken fillet, tortillas and burgers. Home delivery 1 KM. Phone: 062 550 777.',
+      'Kebab Kakadu in Bihać, across from Dom Armije (Mehmedalije Maka Dizdara 6a). Kebab, chicken fillet, tortillas and burgers. Orders and delivery: 062 550 777.',
     ogImageAlt: 'Kakadu Döner Kebab logo on a photo of the restaurant',
   },
   skipLink: 'Skip to content',
@@ -22,12 +22,11 @@ export const en: Content = {
   ],
   cta: {
     callOrder: 'Call to order',
-    deliveryLine: 'Home delivery — 1 KM',
     or: 'or',
   },
   hero: {
     lines: ['Kebab Kakadu,', 'since 2010.'],
-    sub: 'Kebab, chicken fillet, tortillas and burgers. Mehmedalije Maka Dizdara 6a, across from Dom Armije. Order by phone, home delivery 1 KM.',
+    sub: 'Kebab, chicken fillet, tortillas and burgers. Mehmedalije Maka Dizdara 6a, across from Dom Armije. Orders and delivery by phone.',
     menuLink: 'Menu & prices',
     imageAlt: {
       kebabTanjir: 'Sliced döner meat with white sauce and chili flakes in flatbread, on a plate, in paper printed with Kakadu',
@@ -38,7 +37,7 @@ export const en: Content = {
   menu: {
     title: 'Menu',
     note: 'All prices are in KM (BAM).',
-    deliveryNote: 'Delivery during opening hours only.',
+    delivery: 'Home delivery: 1\u00a0KM · during opening hours only.',
     categoriesLabel: 'Menu categories',
     descriptionPlaceholder: '[DISH DESCRIPTION]',
     categories: {
@@ -82,9 +81,9 @@ export const en: Content = {
     dackiTitle: 'Student meal',
     studentSubsidy: 'University of Bihać students can use the UNBI Meal subsidy.',
     photoAlt: {
-      kebabLepinja: 'Kebab in toasted flatbread with lettuce and white sauce, wrapped in paper',
+      kebabUSali: 'Kebab in flatbread with sauce and chili flakes, in Kakadu paper, in the dining room',
       kebabTanjir: 'Sliced döner meat with white sauce and chili flakes on a plate, in paper printed with Kakadu',
-      kebabTortilja: 'Kebab in a tortilla with tomato and lettuce, wrapped in foil',
+      kebabParadajz: 'Kebab in flatbread with tomato, lettuce and white sauce, in paper printed with Kakadu',
       kebabSalate: 'Kebab piled with meat next to trays of fresh cabbage, lettuce and sauce',
     },
   },
@@ -94,13 +93,12 @@ export const en: Content = {
     story: [
       'Kebab Kakadu has been open in Bihać since 2010.',
       'You will find us at Mehmedalije Maka Dizdara 6a, across from Dom Armije, the former 077.',
-      'We deliver ourselves: orders are taken by phone, and home delivery costs 1 KM.',
+      'We deliver ourselves, and orders are taken by phone.',
     ],
     paragraphs: ['Eat in or take away.'],
     storyPlaceholder: '[STORY: a short story from the owner]',
     facts: [
       { k: 'Opened', v: '2010' },
-      { k: 'Delivery', v: '1 KM' },
       { k: 'Address', v: 'Mehmedalije Maka Dizdara 6a' },
     ],
     imageAlt: 'Kebab Kakadu dining room: oak tables, cross-back chairs, green walls and a view through the glass doors to the street',
@@ -116,8 +114,8 @@ export const en: Content = {
       fasadaSumrak: 'Illuminated Kebab Kakadu sign with two flames above the entrance at dusk',
       kebabTanjir: 'Döner meat with white sauce and chili flakes on a plate, in paper printed with Kakadu',
       kebabSalate: 'Kebab piled with meat next to trays of fresh cabbage, lettuce and sauce',
-      kebabLepinja: 'Kebab in toasted flatbread with lettuce and white sauce, wrapped in paper',
-      kebabTortilja: 'Kebab in a tortilla with tomato and lettuce, wrapped in foil',
+      kebabUSali: 'Kebab in flatbread with sauce and chili flakes, in Kakadu paper, in the dining room',
+      kebabParadajz: 'Kebab in flatbread with tomato, lettuce and white sauce, in paper printed with Kakadu',
     },
     creditPlaceholder: '[PHOTO: replace with own photos]',
   },
