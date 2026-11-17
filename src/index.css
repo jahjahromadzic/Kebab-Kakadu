@@ -12,6 +12,8 @@
 
 /* Laptop s niskim prozorom (npr. 1366×768 ekran ≈ 657 px visine prozora): kompaktniji hero */
 @custom-variant short (@media (min-width: 1024px) and (max-height: 820px));
+/* Nizak telefon (npr. 360×640, iPhone SE): hero mora stati u prvi ekran, pa je tekst kompaktniji */
+@custom-variant short-m (@media (max-width: 1023.98px) and (max-height: 700px));
 
 /*
  * PALETA: izvedena iz stvarnih fotografija radnje (RESEARCH.md §6).

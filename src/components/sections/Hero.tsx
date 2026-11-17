@@ -26,12 +26,17 @@ export function Hero() {
         className="pointer-events-none absolute -end-[20%] -top-24 h-[56rem] w-[80%] rounded-full bg-[radial-gradient(closest-side,rgb(217_98_43/0.28),transparent)] lg:-end-[10%] lg:w-[60%]"
       />
 
-      <div className="relative mx-auto grid max-w-[90rem] grid-cols-1 lg:min-h-[34rem] lg:grid-cols-12">
+      {/*
+        Telefon i tablet: hero je tačno visine ekrana ispod headera (100svh − 4rem − 1px ivica headera), pa je prvi ekran
+        uvijek isti i „Meni" počinje tek ispod njega. Fotografija uzima prostor koji ostane iznad teksta.
+        Desktop: raspored u 12 kolona, visina prema sadržaju.
+      */}
+      <div className="relative mx-auto flex h-[calc(100svh-4rem-1px)] max-w-[90rem] flex-col lg:grid lg:h-auto lg:min-h-[34rem] lg:grid-cols-12">
         {/* Fotografija */}
-        <div className="relative lg:col-span-7 lg:col-start-6 lg:row-start-1">
+        <div className="relative min-h-[7rem] flex-1 lg:col-span-7 lg:col-start-6 lg:row-start-1">
           <div
             style={frameVars}
-            className="hero-fade relative ms-auto aspect-[var(--hero-aspect)] w-full overflow-hidden sm:aspect-[16/12] lg:absolute lg:inset-y-0 lg:start-0 lg:end-[min(-2.5rem,calc((90rem-100vw)/2))] lg:aspect-auto lg:w-auto"
+            className="hero-fade absolute inset-0 overflow-hidden lg:inset-y-0 lg:start-0 lg:end-[min(-2.5rem,calc((90rem-100vw)/2))] lg:w-auto"
           >
             <Picture
               image={heroImage.image}
@@ -50,10 +55,10 @@ export function Hero() {
         </div>
 
         {/* Tekst */}
-        <div className="relative z-10 -mt-24 flex flex-col justify-center px-4 pb-6 sm:-mt-40 sm:px-6 lg:col-span-8 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:px-10 lg:pt-14 lg:pb-12 short:pt-8 short:pb-8">
+        <div className="relative z-10 -mt-20 flex shrink-0 flex-col justify-center px-4 pb-5 sm:-mt-28 sm:px-6 sm:pb-8 lg:col-span-8 lg:col-start-1 lg:row-start-1 lg:mt-0 lg:px-10 lg:pt-14 lg:pb-12 short:pt-8 short:pb-8 short-m:-mt-14 short-m:pb-4">
           <h1
             id="hero-title"
-            className="display text-balance text-[clamp(3.3rem,15vw,6rem)] text-krem lg:text-[clamp(4.8rem,7.2vw,8.5rem)] short:text-[clamp(4.2rem,min(7.2vw,13svh),8.5rem)]"
+            className="display text-balance text-[clamp(3.3rem,15vw,6rem)] text-krem lg:text-[clamp(4.8rem,7.2vw,8.5rem)] short:text-[clamp(4.2rem,min(7.2vw,13svh),8.5rem)] short-m:text-[clamp(2.7rem,12.5vw,4.2rem)]"
           >
             {t.hero.lines.map((line, i) => (
               <span key={line} data-reveal-line className="line-mask">
@@ -62,11 +67,11 @@ export function Hero() {
             ))}
           </h1>
 
-          <p className="mt-6 max-w-[38ch] text-lg leading-relaxed text-krem/85 lg:mt-6 lg:text-xl short:mt-4 short:text-lg" data-reveal>
+          <p className="mt-5 max-w-[38ch] text-lg leading-relaxed text-krem/85 lg:mt-6 lg:text-xl short:mt-4 short:text-lg short-m:mt-3 short-m:text-[0.95rem] short-m:leading-snug" data-reveal>
             {t.hero.sub}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-end gap-x-8 gap-y-5 short:mt-5" data-reveal>
+          <div className="mt-6 flex flex-wrap items-end gap-x-8 gap-y-4 short:mt-5 short-m:mt-4 short-m:gap-y-3" data-reveal>
             <CallOrder />
             <a
               href="#meni"
